@@ -3,44 +3,6 @@
   
     
     <entry>
-      <title>hello</title>
-      <link href="/post/3610a686/"/>
-      <url>/post/3610a686/</url>
-      <content type="html"><![CDATA[]]></content>
-      
-      
-        <tags>
-            
-            <tag> hello </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>markdown2</title>
-      <link href="/post/2340b347/"/>
-      <url>/post/2340b347/</url>
-      <content type="html"><![CDATA[<ul><li>just a test</li></ul>]]></content>
-      
-      <categories>
-          
-          <category> computer science </category>
-          
-          <category> language </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Markdown Test</title>
       <link href="/post/42d6409f/"/>
       <url>/post/42d6409f/</url>

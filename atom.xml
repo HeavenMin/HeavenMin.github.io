@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="heavenmin.com/"/>
-  <updated>2018-05-30T08:08:38.259Z</updated>
+  <updated>2018-05-30T07:44:44.718Z</updated>
   <id>heavenmin.com/</id>
   
   <author>
@@ -15,52 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>hello</title>
-    <link href="heavenmin.com/post/3610a686/"/>
-    <id>heavenmin.com/post/3610a686/</id>
-    <published>2018-05-30T08:03:22.000Z</published>
-    <updated>2018-05-30T08:08:38.259Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="hello" scheme="heavenmin.com/tags/hello/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown2</title>
-    <link href="heavenmin.com/post/2340b347/"/>
-    <id>heavenmin.com/post/2340b347/</id>
-    <published>2018-05-30T07:59:10.000Z</published>
-    <updated>2018-05-30T08:00:01.210Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>just a test</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;just a test&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-      <category term="computer science" scheme="heavenmin.com/categories/computer-science/"/>
-    
-      <category term="language" scheme="heavenmin.com/categories/computer-science/language/"/>
-    
-    
-      <category term="markdown" scheme="heavenmin.com/tags/markdown/"/>
-    
-  </entry>
   
   <entry>
     <title>Markdown Test</title>
