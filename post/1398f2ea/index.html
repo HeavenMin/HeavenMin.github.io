@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif">
-<meta property="og:updated_time" content="2018-06-01T13:01:35.699Z">
+<meta property="og:updated_time" content="2018-06-01T13:10:45.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm and Data Structure Summary">
 <meta name="twitter:description" content="Big-O Concept{O 上界} {Ω Omega 下界} {Θ Theta 上下界} Sorting Algorithm Complexity (credit to: https://www.toptal.com/developers/sorting-algorithms/) Data Structure array 数组 linked list 链表 {benefit: can add">
@@ -107,7 +107,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -146,9 +146,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="Big-O-Concept"><a href="#Big-O-Concept" class="headerlink" title="Big-O Concept"></a>Big-O Concept</h2><p>{O 上界} {Ω Omega 下界} {Θ Theta 上下界}<br><img src="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png" alt="big_o_complexity"></p>
-<h2 id="Sorting-Algorithm-Complexity"><a href="#Sorting-Algorithm-Complexity" class="headerlink" title="Sorting Algorithm Complexity"></a>Sorting Algorithm Complexity</h2><p><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true" alt="sort_algorithm_complexity"><br><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif" alt="sorting_algo_gif"> (credit to: <a href="https://www.toptal.com/developers/sorting-algorithms/" target="_blank" rel="noopener">https://www.toptal.com/developers/sorting-algorithms/</a>)</p>
-<h2 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h2><ul>
+    <h4 id="Big-O-Concept"><a href="#Big-O-Concept" class="headerlink" title="Big-O Concept"></a>Big-O Concept</h4><p>{O 上界} {Ω Omega 下界} {Θ Theta 上下界}<br><img src="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png" alt="big_o_complexity"></p>
+<h4 id="Sorting-Algorithm-Complexity"><a href="#Sorting-Algorithm-Complexity" class="headerlink" title="Sorting Algorithm Complexity"></a>Sorting Algorithm Complexity</h4><p><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true" alt="sort_algorithm_complexity"><br><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif" alt="sorting_algo_gif"> (credit to: <a href="https://www.toptal.com/developers/sorting-algorithms/" target="_blank" rel="noopener">https://www.toptal.com/developers/sorting-algorithms/</a>)</p>
+<h4 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h4><ul>
 <li>array 数组</li>
 <li><p>linked list 链表 {benefit: can add and remove items from the beginning of the list in constant time.}</p>
 <ul>
@@ -236,7 +236,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Brute-Force-蛮力法"><a href="#Brute-Force-蛮力法" class="headerlink" title="Brute Force 蛮力法"></a>Brute Force 蛮力法</h2><ul>
+<h4 id="Brute-Force-蛮力法"><a href="#Brute-Force-蛮力法" class="headerlink" title="Brute Force 蛮力法"></a>Brute Force 蛮力法</h4><ul>
 <li><p>selection sort 选择排序 {<strong>无论什么情况排序速度一样快</strong>}</p>
 <ul>
 <li>从第一个元素开始从它之后找最小的元素与之交换.</li>
@@ -275,7 +275,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Decrease-and-conquer-减治法"><a href="#Decrease-and-conquer-减治法" class="headerlink" title="Decrease-and-conquer 减治法"></a>Decrease-and-conquer 减治法</h2><ul>
+<h4 id="Decrease-and-conquer-减治法"><a href="#Decrease-and-conquer-减治法" class="headerlink" title="Decrease-and-conquer 减治法"></a>Decrease-and-conquer 减治法</h4><ul>
 <li><p>insertion sort 插入排序 {<strong>对于差不多排好序的速度很快，可以到达Ω(n)</strong>}</p>
 <ul>
 <li>从第二个元素开始向前找到正确的位置插入</li>
@@ -316,7 +316,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Divide-and-conquer-分治法"><a href="#Divide-and-conquer-分治法" class="headerlink" title="Divide-and-conquer 分治法"></a>Divide-and-conquer 分治法</h2><p>分解问题，求解子问题，合并自问题的解<br>T(n) = aT(n/b) + f(n) {a个需要求解的问题，问题被分成b个，f(n)的分解合并时间消耗}<br>T(n) = <code>O(n^d) if a &lt; b^d</code> or <code>O(n^dlogn) if a = b^d</code> or <code>O(n^log_b(a)) if a &gt; b^d</code></p>
+<h4 id="Divide-and-conquer-分治法"><a href="#Divide-and-conquer-分治法" class="headerlink" title="Divide-and-conquer 分治法"></a>Divide-and-conquer 分治法</h4><p>分解问题，求解子问题，合并自问题的解<br>T(n) = aT(n/b) + f(n) {a个需要求解的问题，问题被分成b个，f(n)的分解合并时间消耗}<br>T(n) = <code>O(n^d) if a &lt; b^d</code> or <code>O(n^dlogn) if a = b^d</code> or <code>O(n^log_b(a)) if a &gt; b^d</code></p>
 <ul>
 <li><p>merge sort 归并排序 {<strong>除了heapsort以外唯一BestAveWorst全是O(nlogn)排序算法</strong>}</p>
 <ul>
@@ -342,7 +342,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Transform-and-conquer-变治法"><a href="#Transform-and-conquer-变治法" class="headerlink" title="Transform-and-conquer 变治法"></a>Transform-and-conquer 变治法</h2><ul>
+<h4 id="Transform-and-conquer-变治法"><a href="#Transform-and-conquer-变治法" class="headerlink" title="Transform-and-conquer 变治法"></a>Transform-and-conquer 变治法</h4><ul>
 <li>预排序解决问题<ul>
 <li>检查数组中元素的唯一性</li>
 <li>算法数组的模式 （一个数组中最多的元素)</li>
@@ -373,7 +373,7 @@
 </li>
 <li>B树</li>
 </ul>
-<h2 id="dynamic-programming-动态规划"><a href="#dynamic-programming-动态规划" class="headerlink" title="dynamic programming 动态规划"></a>dynamic programming 动态规划</h2><ul>
+<h4 id="dynamic-programming-动态规划"><a href="#dynamic-programming-动态规划" class="headerlink" title="dynamic programming 动态规划"></a>dynamic programming 动态规划</h4><ul>
 <li><p>与其对交叠的子问题一次又一次地求解，还不如对每个较小的子问题只求解一次并把结果记录在表中。 (对具有交叠子问题的问题进行求解的技术)</p>
 <ul>
 <li>类似斐波那契数</li>
@@ -399,7 +399,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Greedy-Technique-贪婪技术"><a href="#Greedy-Technique-贪婪技术" class="headerlink" title="Greedy Technique 贪婪技术"></a>Greedy Technique 贪婪技术</h2><ul>
+<h4 id="Greedy-Technique-贪婪技术"><a href="#Greedy-Technique-贪婪技术" class="headerlink" title="Greedy Technique 贪婪技术"></a>Greedy Technique 贪婪技术</h4><ul>
 <li><p>Prim</p>
 <ul>
 <li>构造最小生成树算法</li>
@@ -421,7 +421,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="How-to-optimaize-the-algorithm"><a href="#How-to-optimaize-the-algorithm" class="headerlink" title="How to optimaize the algorithm"></a>How to optimaize the algorithm</h2><ul>
+<h4 id="How-to-optimaize-the-algorithm"><a href="#How-to-optimaize-the-algorithm" class="headerlink" title="How to optimaize the algorithm"></a>How to optimaize the algorithm</h4><ul>
 <li><p>Optimaize &amp; Solve Technique</p>
 <ul>
 <li>Look for <strong>BUD</strong><ul>
@@ -510,7 +510,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
