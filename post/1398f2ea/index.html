@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Big-O Concept{O 上界} {Ω Omega 下界} {Θ Theta 上下界} Sorting Algorithm Complexity (credit to: https://www.toptal.com/developers/sorting-algorithms/) Data Structure array 数组 linked list 链表 {benefit: can add">
+<meta name="keywords" content="algorithm,data structure,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm and Data Structure Summary">
+<meta property="og:url" content="heavenmin.com/post/1398f2ea/index.html">
+<meta property="og:site_name" content="Heaven">
+<meta property="og:description" content="Big-O Concept{O 上界} {Ω Omega 下界} {Θ Theta 上下界} Sorting Algorithm Complexity (credit to: https://www.toptal.com/developers/sorting-algorithms/) Data Structure array 数组 linked list 链表 {benefit: can add">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png">
+<meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true">
+<meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif?raw=true">
+<meta property="og:updated_time" content="2018-06-02T02:10:16.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm and Data Structure Summary">
+<meta name="twitter:description" content="Big-O Concept{O 上界} {Ω Omega 下界} {Θ Theta 上下界} Sorting Algorithm Complexity (credit to: https://www.toptal.com/developers/sorting-algorithms/) Data Structure array 数组 linked list 链表 {benefit: can add">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Algorithm and Data Structure Summary</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/post/42d6409f/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=heavenmin.com/post/1398f2ea/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=heavenmin.com/post/1398f2ea/&text=Algorithm and Data Structure Summary"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=heavenmin.com/post/1398f2ea/&is_video=false&description=Algorithm and Data Structure Summary"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithm and Data Structure Summary&body=Check out this article: heavenmin.com/post/1398f2ea/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=heavenmin.com/post/1398f2ea/&name=Algorithm and Data Structure Summary&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Algorithm and Data Structure Summary
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Heaven</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-06-10T11:52:42.000Z" itemprop="datePublished">2016-06-10</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/data-structure/">data structure</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h4 id="Big-O-Concept"><a href="#Big-O-Concept" class="headerlink" title="Big-O Concept"></a>Big-O Concept</h4><p>{O 上界} {Ω Omega 下界} {Θ Theta 上下界}<br><img src="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png" alt="big_o_complexity"></p>
+<h4 id="Sorting-Algorithm-Complexity"><a href="#Sorting-Algorithm-Complexity" class="headerlink" title="Sorting Algorithm Complexity"></a>Sorting Algorithm Complexity</h4><p><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true" alt="sort_algorithm_complexity"><br><img src="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif?raw=true" alt="sorting_algo_gif"> (credit to: <a href="https://www.toptal.com/developers/sorting-algorithms/" target="_blank" rel="noopener">https://www.toptal.com/developers/sorting-algorithms/</a>)</p>
+<h4 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h4><ul>
+<li>array 数组</li>
+<li><p>linked list 链表 {benefit: can add and remove items from the beginning of the list in constant time.}</p>
+<ul>
+<li>doubly linked list 双向链表</li>
+<li><strong>runer rechnique</strong>: iterate through the linked list with two pointers simultaneously (fast and slow)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SinglyLinkedListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value, next=None)</span>:</span></span><br><span class="line">        self.val = value</span><br><span class="line">        self.next = next</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoublyLinkedListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init</span><span class="params">(self, value, next=None, prev=None)</span>:</span></span><br><span class="line">        self.val = value</span><br><span class="line">        self.next = next</span><br><span class="line">        self.prev = prev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>set 集合</p>
+<ul>
+<li>在python中空集是 set()</li>
+<li>dic 字典</li>
+<li>hashtable</li>
+</ul>
+</li>
+<li>list 列表<ul>
+<li>stack 栈 {LIFO} {push, pop, top}</li>
+<li>queue 队列 {FIFO} {enqueue, dequeue, front, rear}<ul>
+<li>priority queue 优先队列<ul>
+<li>heap 堆 <code>see tree</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>graphs 图 {G = &lt;V-vertex, E-edge&gt;} {directed, undirected ,weighted, unweighted}</p>
+<ul>
+<li>complete graph 完全图</li>
+<li>dense graph 稠密图</li>
+<li>spares graph 稀疏图</li>
+<li>{表示方法: adjacency matrix邻接矩阵 - 适合稠密图<br> OR adjacency lists邻接链表 - 适合稀疏图}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AdjacencyList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.a_list = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addEdge</span><span class="params">(self, from_vertex, to_vertex)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> from_vertex <span class="keyword">in</span> self.a_list.keys():</span><br><span class="line">            self.a_list[from_vertex].append(to_vertex)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.a_list[from_vertex] = [to_vertex]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_a_list</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> from_v <span class="keyword">in</span> self.a_list:</span><br><span class="line">            print(<span class="string">'&#123;vertex&#125; -&gt;'</span>.format(vertex = from_v), <span class="string">' -&gt; '</span>.join(</span><br><span class="line">                  [str(to_v) <span class="keyword">for</span> to_v <span class="keyword">in</span> self.a_list[from_v]]))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>tree 树 {|E| = |V| - 1}</p>
+<ul>
+<li><p>binary tree 二叉树</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.val = value</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tree traversal</p>
+<ul>
+<li>preorder (左中右)</li>
+<li>inorder （中左右)</li>
+<li>postorder (左右中)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preorder</span><span class="params">(tree)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree:</span><br><span class="line">        print(tree.val)</span><br><span class="line">        preorder(tree.left)</span><br><span class="line">        preorder(tree.right)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inorder</span><span class="params">(tree)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree:</span><br><span class="line">        inorder(tree.left)</span><br><span class="line">        print(tree.val)</span><br><span class="line">        inorder(tree.right)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postorder</span><span class="params">(tree)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree:</span><br><span class="line">        postorder(tree.left)</span><br><span class="line">        postorder(tree.right)</span><br><span class="line">        print(tree.val)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>binary search tree 二叉查找树 {math.floor(logn) &lt;= h &lt;= n-1}</p>
+</li>
+<li>balanced search tree 平衡查找树<ul>
+<li>self-balancing 自平衡查找树<ul>
+<li>AVL tree<ul>
+<li>每个节点的左右子树高度差不超过1</li>
+</ul>
+</li>
+<li>red-black tree 红黑树<ul>
+<li>能容忍同一节点的一棵子树的高度是另一棵子树的两倍</li>
+</ul>
+</li>
+<li>splay tree 分裂树</li>
+</ul>
+</li>
+<li>允许单个节点中包含不只一个元素<ul>
+<li>2-3 tree</li>
+<li>2-3-4 tree</li>
+<li>B tree</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>complete binary tree 完全二叉树</li>
+<li><p>heap (binary heaps) {complete binary tree}</p>
+<ul>
+<li>可以用完全二叉树实现, 树的每一层都是满的，除了最后一层最右边元素可能缺位</li>
+<li>父母优势, 每一个节点的键都要大于等于它子女的键<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     10</span><br><span class="line">   /    \      if using array:</span><br><span class="line">  8      7          parents  leaves</span><br><span class="line"> / \    / \     0   1  2  3| 4  5  6</span><br><span class="line">5   2  6       [ , 10, 8, 7, 5, 2, 6]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Tries (prefix trees)</p>
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Brute-Force-蛮力法"><a href="#Brute-Force-蛮力法" class="headerlink" title="Brute Force 蛮力法"></a>Brute Force 蛮力法</h4><ul>
+<li><p>selection sort 选择排序 {<strong>无论什么情况排序速度一样快</strong>}</p>
+<ul>
+<li>从第一个元素开始从它之后找最小的元素与之交换.</li>
+<li>Time complexity: {Average: Θ(n^2), Worse: O(n^2), Best: Ω(n^2)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selection_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(list) - <span class="number">1</span>):</span><br><span class="line">        min_num = list[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, len(list)):</span><br><span class="line">            min_num = min(min_num, list[j])</span><br><span class="line">        list[list[i:].index(min_num) + i], list[i] = list[i], min_num</span><br><span class="line">    <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>bubble sort 冒泡排序 {<strong>对于差不多排好序的速度很快，可以到达Ω(n)</strong>}</p>
+<ul>
+<li>比较相邻元素并将最大的元素向后沉直到最后，重复这个步骤</li>
+<li>Time complexity: {Average: Θ(n^2), Worse: O(n^2), Best: Ω(n)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list) - <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(list) - <span class="number">1</span> - i):</span><br><span class="line">            <span class="keyword">if</span> list[j] &gt; list[j + <span class="number">1</span>]:</span><br><span class="line">                list[j], list[j + <span class="number">1</span>] = list[j + <span class="number">1</span>], list[j]</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort_upgrade</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list) - <span class="number">1</span>):</span><br><span class="line">        already_sorted = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(list) - <span class="number">1</span> - i):</span><br><span class="line">            <span class="keyword">if</span> list[j] &gt; list[j + <span class="number">1</span>]:</span><br><span class="line">                list[j], list[j + <span class="number">1</span>] = list[j + <span class="number">1</span>], list[j]</span><br><span class="line">                already_sorted = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> already_sorted:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Sequential Search 顺序查找 线性算法</p>
+<ul>
+<li>Time complexity: {Average: Θ(n), Worse: O(n), Best: Ω(1)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sequential_search</span><span class="params">(list, k)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i, ele <span class="keyword">in</span> enumerate(list):</span><br><span class="line">        <span class="keyword">if</span> ele == k:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>dfs 深度优先查找</p>
+<ul>
+<li>Time complexity: O(|V|+|E|) = O(b^{d})</li>
+<li>Space complexity: O(|V|)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(graph, start)</span>:</span></span><br><span class="line">    visited, stack, count = [], [start], <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> stack:</span><br><span class="line">        vertex = stack.pop()</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        visited.append(vertex)</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[vertex]:</span><br><span class="line">            <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visited + stack:</span><br><span class="line">                stack.append(v)</span><br><span class="line">    <span class="keyword">return</span> visited, count</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>bfs 广度优先查找</p>
+<ul>
+<li>Time complexity: O(|V|+|E|) = O(b^{d})</li>
+<li>Space complexity: O(|V|) = O(b^{d})<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(graph, start)</span>:</span></span><br><span class="line">    visited, queue, count = [], [start], <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        vertex = queue.pop(<span class="number">0</span>)</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        visited.append(vertex)</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[vertex]:</span><br><span class="line">            <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visited + queue:</span><br><span class="line">                queue.append(v)</span><br><span class="line">    <span class="keyword">return</span> visited, count</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Decrease-and-conquer-减治法"><a href="#Decrease-and-conquer-减治法" class="headerlink" title="Decrease-and-conquer 减治法"></a>Decrease-and-conquer 减治法</h4><ul>
+<li><p>insertion sort 插入排序 {<strong>对于差不多排好序的速度很快，可以到达Ω(n)</strong>}</p>
+<ul>
+<li>从第二个元素开始向前找到正确的位置插入</li>
+<li>Time complexity: {Average: Θ(n^2), Worse: O(n^2), Best: Ω(n)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insetion_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(list)):</span><br><span class="line">        insert_num = list[i]</span><br><span class="line">        j = i - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> j &gt;= <span class="number">0</span> <span class="keyword">and</span> list[j] &gt; insert_num:</span><br><span class="line">            list[j + <span class="number">1</span>] = list[j]</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">        list[j+ <span class="number">1</span>] = insert_num</span><br><span class="line">    <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>shell sort 希尔排序</p>
+<ul>
+<li>通过一个gap来左插入排序(常用方法是从len/2gap开始每次缩小2倍)</li>
+<li>Time complexity: {Average: Θ(n(logn)^2), Worse: O(n(logn)^2), Best: Ω(nlogn)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    gap = len(list) // <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> gap &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(gap, len(list)):</span><br><span class="line">            temp = list[i]</span><br><span class="line">            j = i</span><br><span class="line">            <span class="keyword">while</span> j &gt;= gap <span class="keyword">and</span> list[j - gap] &gt; temp:</span><br><span class="line">                list[j], list[j - gap] = list[j - gap], temp</span><br><span class="line">                j -= gap</span><br><span class="line">        gap = gap // <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>generating permutations</p>
+<ul>
+<li>JohnsonTrotter<ul>
+<li>Time complexity: O(n!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>binary search 折半查找</p>
+<ul>
+<li>Time complexity: {Average: Θ(logn), Worse: O(logn), Best: Ω(1)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(sorted_list, key)</span>:</span></span><br><span class="line">    hi = len(sorted_list) - <span class="number">1</span></span><br><span class="line">    m = hi // <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> sorted_list[m] == key:</span><br><span class="line">        <span class="keyword">return</span> m</span><br><span class="line">    <span class="keyword">elif</span> sorted_list[m] &gt; key:</span><br><span class="line">        <span class="keyword">return</span> binary_search(sorted_list[:m], key)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> binary_search(sorted_list[m + <span class="number">1</span>:], key) + m + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>quick select 快速选择</p>
+<ul>
+<li>寻找第k个最小元素,通过划分来实现</li>
+<li>Time complexity: {Average: Θ(n), Worse: O(n^2), Best: Ω(n)}</li>
+<li>Space complexity: O(1)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_select_m</span><span class="params">(list, start, end, k_th_min)</span>:</span></span><br><span class="line">    s = partition(list, start, end)</span><br><span class="line">    <span class="keyword">if</span> s == k_th_min - <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> list[s]</span><br><span class="line">    <span class="keyword">elif</span> s &gt; k_th_min - <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> quick_select_m(list, start, s - <span class="number">1</span>, k_th_min)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> quick_select_m(list, s + <span class="number">1</span>, end, k_th_min)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(list, start, end)</span>:</span></span><br><span class="line">    pivot = list[start]</span><br><span class="line">    i = start + <span class="number">1</span></span><br><span class="line">    j = end</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">while</span> list[i] &lt;= pivot <span class="keyword">and</span> i &lt;= j:</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> list[j] &gt;= pivot <span class="keyword">and</span> j &gt;= i:</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> i &gt; j:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        list[i], list[j] = list[j], list[i]</span><br><span class="line">    list[start], list[j] = list[j], list[start]</span><br><span class="line">    <span class="keyword">return</span> j</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Divide-and-conquer-分治法"><a href="#Divide-and-conquer-分治法" class="headerlink" title="Divide-and-conquer 分治法"></a>Divide-and-conquer 分治法</h4><p>分解问题，求解子问题，合并自问题的解<br>T(n) = aT(n/b) + f(n) {a个需要求解的问题，问题被分成b个，f(n)的分解合并时间消耗}<br>T(n) = <code>O(n^d) if a &lt; b^d</code> or <code>O(n^dlogn) if a = b^d</code> or <code>O(n^log_b(a)) if a &gt; b^d</code></p>
+<ul>
+<li><p>merge sort 归并排序 {<strong>除了heapsort以外唯一BestAveWorst全是O(nlogn)排序算法</strong>}</p>
+<ul>
+<li>两种实现方法(自顶向下-递归， 自底向上-循环)</li>
+<li>Time complexity: {Average: Θ(nlogn), Worse: O(nlogn), Best: Ω(nlogn)}</li>
+<li>Space complexity: {O(n)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(list) &gt; <span class="number">1</span>:</span><br><span class="line">        list_b = list[:len(list) // <span class="number">2</span>]</span><br><span class="line">        list_c = list[len(list) // <span class="number">2</span>:]</span><br><span class="line">        <span class="keyword">return</span> merge(merge_sort(list_b), merge_sort(list_c))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> list</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(list_b, list_c)</span>:</span></span><br><span class="line">    list_a = list_b + list_c    <span class="comment">#init list_a</span></span><br><span class="line">    i, j, k = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(list_b) <span class="keyword">and</span> j &lt; len(list_c):</span><br><span class="line">        <span class="keyword">if</span> list_b[i] &lt;= list_c[j]:</span><br><span class="line">            list_a[k] = list_b[i]</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            list_a[k] = list_c[j]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i == len(list_b):</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> range(j, len(list_c)):</span><br><span class="line">            list_a[k] = list_c[index]</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j == len(list_c):</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> range(i, len(list_b)):</span><br><span class="line">            list_a[k] = list_b[index]</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> list_a</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>quick sort 快速排序   {<strong>pivot的选择对于算法效率至关重要</strong>}</p>
+<ul>
+<li>不断选择pivot来将元素划分到它的左右来实现</li>
+<li>Time complexity: {Average: Θ(nlogn), Worse: O(n^2), Best: Ω(nlogn)}</li>
+<li>Space complexity: {O(nlogn)}</li>
+<li>pivot每次选第一个在已经排好序的数组上时间效率是O(n^2)<ul>
+<li>优化方法<ul>
+<li>使用随机pivot, 平均划分pivot, 快排好后使用插入排序<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort_m</span><span class="params">(list, start, end)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> start &lt; end:</span><br><span class="line">        pivot = partition(list, start, end)</span><br><span class="line">        quick_sort_m(list, start, pivot - <span class="number">1</span>)</span><br><span class="line">        quick_sort_m(list, pivot + <span class="number">1</span>, end)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(list, start, end)</span>:</span></span><br><span class="line">    pivot = list[start]</span><br><span class="line">    i = start + <span class="number">1</span></span><br><span class="line">    j = end</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">while</span> list[i] &lt;= pivot <span class="keyword">and</span> i &lt;= j:</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> list[j] &gt;= pivot <span class="keyword">and</span> j &gt;= i:</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> i &gt; j:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        list[i], list[j] = list[j], list[i]</span><br><span class="line">    list[start], list[j] = list[j], list[start]</span><br><span class="line">    <span class="keyword">return</span> j</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Transform-and-conquer-变治法"><a href="#Transform-and-conquer-变治法" class="headerlink" title="Transform-and-conquer 变治法"></a>Transform-and-conquer 变治法</h4><ul>
+<li>预排序解决问题<ul>
+<li>检查数组中元素的唯一性</li>
+<li>算法数组的模式 （一个数组中最多的元素)</li>
+</ul>
+</li>
+<li><p>heap sort 堆排序</p>
+<ul>
+<li>先构建一个堆, 不断的删除最大键，</li>
+<li>Time complexity: {Average: Θ(nlogn), Worse: O(nlogn), Best: Ω(nlogn)}</li>
+<li>Space complexity: {O(1)}<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heap_sort</span><span class="params">(list)</span>:</span></span><br><span class="line">    heapq.heapify(list)</span><br><span class="line">    <span class="keyword">return</span> [heapq.heappop(list) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list))]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Problem reduction 问题简化 {已有一种方法求其他问题}</p>
+<ul>
+<li>lcm(m, n) <em> gcd(m, n) = m </em> n {lcm: 最小公倍数, gcd: 最大公约数}</li>
+<li>求一个函数的最小值， 可以求一个函数负函数的最大值的负数</li>
+</ul>
+</li>
+<li>hash table<ul>
+<li>需要把键在hash table 中尽可能均匀分布</li>
+<li>平均插入，删除， 查找效率都是 O(1), 当最坏情况全部冲突到一个位置时候，退化到 O(n)</li>
+<li>open hasing, also: separate chaining 分离链 开hash</li>
+<li>closed hashing 闭hash</li>
+<li>double hashing</li>
+<li>rehasing</li>
+</ul>
+</li>
+<li>B树</li>
+</ul>
+<h4 id="dynamic-programming-动态规划"><a href="#dynamic-programming-动态规划" class="headerlink" title="dynamic programming 动态规划"></a>dynamic programming 动态规划</h4><ul>
+<li><p>与其对交叠的子问题一次又一次地求解，还不如对每个较小的子问题只求解一次并把结果记录在表中。 (对具有交叠子问题的问题进行求解的技术)</p>
+<ul>
+<li>类似斐波那契数</li>
+<li><p>coins_row problem (求互不相临的最大金币总金额)</p>
+<ul>
+<li>Time complexity: O(n), Space complexity: O(n)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">coin_row</span><span class="params">(coins)</span>:</span></span><br><span class="line">    coin1, coin2 = coins[<span class="number">0</span>], coins[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">for</span> i, coin <span class="keyword">in</span> enumerate(coins[<span class="number">2</span>:]):</span><br><span class="line">        coin1, coin2 = coin2, max(coin1 + coin, coin2)</span><br><span class="line">    <span class="keyword">return</span> coin2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>change_making problem</p>
+<ul>
+<li>Time complexity: O(mn), Space complexity: O(n)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_making</span><span class="params">(coins, change)</span>:</span></span><br><span class="line">    count = [<span class="number">0</span>] * change</span><br><span class="line">    count[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, change):</span><br><span class="line">        tmp = float(<span class="string">'inf'</span>)</span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j &lt;= len(coins) <span class="keyword">and</span> j &lt; len(coins) <span class="keyword">and</span> i &gt;= coins[j]:</span><br><span class="line">            tmp = min(count[i - coins[j]], tmp)</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        count[i] = tmp + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> count[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>knapsack problem 背包问题</p>
+<ul>
+<li>Time complexity: O(nW), Space complexity: O(nW)</li>
+<li>#TODO</li>
+</ul>
+</li>
+<li>Memory Function 记忆功能</li>
+</ul>
+</li>
+</ul>
+<h4 id="Greedy-Technique-贪婪技术"><a href="#Greedy-Technique-贪婪技术" class="headerlink" title="Greedy Technique 贪婪技术"></a>Greedy Technique 贪婪技术</h4><ul>
+<li><p>Prim</p>
+<ul>
+<li>构造最小生成树算法</li>
+<li>先随机选一个点，每次扩展新的点使得这个新的点到已有点的距离最短，直到添加完所有顶点<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TODO (heaven)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Kruskal</p>
+<ul>
+<li>构造最小生成树算法</li>
+<li>先按照权重将边进行排序，然后不断把边加入子图，如果加入此边会产生回路，则天国，直到完成<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TODO (heaven)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Dijkstra</p>
+<ul>
+<li>单起点最短路径问题<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TODO (heaven)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="How-to-optimaize-the-algorithm"><a href="#How-to-optimaize-the-algorithm" class="headerlink" title="How to optimaize the algorithm"></a>How to optimaize the algorithm</h4><ul>
+<li><p>Optimaize &amp; Solve Technique</p>
+<ul>
+<li>Look for <strong>BUD</strong><ul>
+<li>Bottlenecks</li>
+<li>Unnecessary work</li>
+<li>Duplicated work</li>
+</ul>
+</li>
+<li>DIY (Do It Yourself)</li>
+<li>Simplify and Generalize</li>
+<li><p>Base Case and Build (always use for recursion)</p>
+<ul>
+<li>like for generate permutations  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 Case &quot;a&quot; --&gt; &#123;&quot;a&quot;&#125;</span><br><span class="line">2 Case &quot;ab&quot; --&gt; &#123;&quot;ab&quot;, &quot;ba&quot;&#125;</span><br><span class="line">3 Case &quot;abc&quot; --&gt; &#123;&quot;cab&quot;, &quot;acb&quot;, &quot;abc&quot;, &quot;cba&quot;, &quot;bca&quot;, bac&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Data structure brainstorm</p>
+<ul>
+<li>hash</li>
+<li>heap</li>
+<li>tree</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Consider the <strong>BCR</strong> (Best Conceivable Runtime)</p>
+<ul>
+<li>The BCR is the best runtime you could conceive of a solution to a problem having.You can easily prove that there is no way you could beat the BCR.</li>
+</ul>
+</li>
+<li><p>Good coding looks like</p>
+<ul>
+<li>correct</li>
+<li>efficient</li>
+<li>simple</li>
+<li>readable</li>
+<li>maintainable<ul>
+<li>use data structures generously</li>
+<li>appropriate code resue</li>
+<li>modular</li>
+<li>flexible and robust</li>
+<li>error checking</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+    <br>
+    <div class="article-license">
+   	<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square" alt="License: CC BY-NC-SA 4.0" align="left" >
+    </a>
+</div>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Big-O-Concept"><span class="toc-number">1.</span> <span class="toc-text">Big-O Concept</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sorting-Algorithm-Complexity"><span class="toc-number">2.</span> <span class="toc-text">Sorting Algorithm Complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Structure"><span class="toc-number">3.</span> <span class="toc-text">Data Structure</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Brute-Force-蛮力法"><span class="toc-number">4.</span> <span class="toc-text">Brute Force 蛮力法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Decrease-and-conquer-减治法"><span class="toc-number">5.</span> <span class="toc-text">Decrease-and-conquer 减治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Divide-and-conquer-分治法"><span class="toc-number">6.</span> <span class="toc-text">Divide-and-conquer 分治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transform-and-conquer-变治法"><span class="toc-number">7.</span> <span class="toc-text">Transform-and-conquer 变治法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dynamic-programming-动态规划"><span class="toc-number">8.</span> <span class="toc-text">dynamic programming 动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Greedy-Technique-贪婪技术"><span class="toc-number">9.</span> <span class="toc-text">Greedy Technique 贪婪技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-optimaize-the-algorithm"><span class="toc-number">10.</span> <span class="toc-text">How to optimaize the algorithm</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=heavenmin.com/post/1398f2ea/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=heavenmin.com/post/1398f2ea/&text=Algorithm and Data Structure Summary"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=heavenmin.com/post/1398f2ea/&is_video=false&description=Algorithm and Data Structure Summary"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Algorithm and Data Structure Summary&body=Check out this article: heavenmin.com/post/1398f2ea/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=heavenmin.com/post/1398f2ea/&title=Algorithm and Data Structure Summary"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=heavenmin.com/post/1398f2ea/&name=Algorithm and Data Structure Summary&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Heaven 
+    | Licence:
+    <li><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></li>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-120174290-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'heavenmin';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
