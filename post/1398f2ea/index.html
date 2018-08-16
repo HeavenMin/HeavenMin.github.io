@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/HeavenMin/material/master/algorithm/big_O%20complexity.png">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sort_algorithm_complexity.png?raw=true">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/algorithm/sorting_algo_gif.gif?raw=true">
-<meta property="og:updated_time" content="2018-08-16T05:20:12.543Z">
+<meta property="og:updated_time" content="2018-08-16T05:26:28.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm and Data Structure Summary">
 <meta name="twitter:description" content="Big-O Concept{O 上界} {Ω Omega 下界} {Θ Theta 上下界} Sorting Algorithm Complexity (credit to: https://www.toptal.com/developers/sorting-algorithms/) Data Structure 数据结构array 数组 特性 order random-access    dic">
@@ -409,7 +409,8 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_bit</span><span class="params">(num, i, v)</span>:</span></span><br><span class="line">    mask = ~(<span class="number">1</span> &lt;&lt; i)</span><br><span class="line">    <span class="keyword">return</span> (num &amp; mask) | (v &lt;&lt; i)</span><br></pre></td></tr></table></figure>
 <h2 id="How-To-Optimaize-the-Algorithm"><a href="#How-To-Optimaize-the-Algorithm" class="headerlink" title="How To Optimaize the Algorithm"></a>How To Optimaize the Algorithm</h2><ul>
-<li>Optimaize &amp; Solve Technique<ul>
+<li><p>Optimaize &amp; Solve Technique</p>
+<ul>
 <li>Look for <strong>BUD</strong><ul>
 <li>Bottlenecks</li>
 <li>Unnecessary work</li>
@@ -418,19 +419,21 @@
 </li>
 <li>DIY (Do It Yourself)</li>
 <li>Simplify and Generalize</li>
-<li>Base Case and Build (always use for recursion)<ul>
-<li>like for generate permutations  </li>
+<li><p>Base Case and Build (always use for recursion)</p>
+<ul>
+<li>like for generate permutations<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 Case &quot;a&quot; --&gt; &#123;&quot;a&quot;&#125;</span><br><span class="line">2 Case &quot;ab&quot; --&gt; &#123;&quot;ab&quot;, &quot;ba&quot;&#125;</span><br><span class="line">3 Case &quot;abc&quot; --&gt; &#123;&quot;cab&quot;, &quot;acb&quot;, &quot;abc&quot;, &quot;cba&quot;, &quot;bca&quot;, bac&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Data structure brainstorm</p>
+<ul>
+<li>hash</li>
+<li>heap</li>
+<li>tree</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 Case &quot;a&quot; --&gt; &#123;&quot;a&quot;&#125;</span><br><span class="line">2 Case &quot;ab&quot; --&gt; &#123;&quot;ab&quot;, &quot;ba&quot;&#125;</span><br><span class="line">3 Case &quot;abc&quot; --&gt; &#123;&quot;cab&quot;, &quot;acb&quot;, &quot;abc&quot;, &quot;cba&quot;, &quot;bca&quot;, bac&quot;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>* Data structure brainstorm
-    * hash
-    * heap
-    * tree
-</code></pre><ul>
 <li><p>Consider the <strong>BCR</strong> (Best Conceivable Runtime)</p>
 <ul>
 <li>The BCR is the best runtime you could conceive of a solution to a problem having.You can easily prove that there is no way you could beat the BCR.</li>
