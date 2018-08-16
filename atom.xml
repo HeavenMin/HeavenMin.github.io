@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="heavenmin.com/"/>
-  <updated>2018-08-16T02:31:19.384Z</updated>
+  <updated>2018-07-07T06:14:49.438Z</updated>
   <id>heavenmin.com/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>math test</title>
-    <link href="heavenmin.com/post/931e2563/"/>
-    <id>heavenmin.com/post/931e2563/</id>
-    <published>2018-08-16T02:26:50.000Z</published>
-    <updated>2018-08-16T02:31:19.384Z</updated>
-    
-    <content type="html"><![CDATA[<p>$$ evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i} $$</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;$$ evidence_{i}=\sum_{j}W_{ij}x_{j}+b_{i} $$&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Git Syntax</title>
