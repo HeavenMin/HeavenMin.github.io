@@ -450,6 +450,7 @@ body {
   flex-direction: column;
   background-color: #1d1f21;
   color: #c9cacc;
+  font-display: swap;
   font-weight: 400;
   font-size: 14px;
   font-family: "Menlo", "Meslo LG", monospace;
