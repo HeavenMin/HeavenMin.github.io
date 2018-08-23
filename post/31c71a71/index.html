@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="The great-circle distance or orthodromic distance is the shortest distance between two points on the surface of a sphere, measured along the surface of the sphere (as opposed to a straight line throu">
+<meta name="keywords" content="great-circle-distance,algorithm,python,geospatial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="地球两点大圆距离计算算法 (经度纬度)">
+<meta property="og:url" content="heavenmin.com/post/31c71a71/index.html">
+<meta property="og:site_name" content="Heaven">
+<meta property="og:description" content="The great-circle distance or orthodromic distance is the shortest distance between two points on the surface of a sphere, measured along the surface of the sphere (as opposed to a straight line throu">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-23T13:14:08.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="地球两点大圆距离计算算法 (经度纬度)">
+<meta name="twitter:description" content="The great-circle distance or orthodromic distance is the shortest distance between two points on the surface of a sphere, measured along the surface of the sphere (as opposed to a straight line throu">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>地球两点大圆距离计算算法 (经度纬度)</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/post/5c6afe15/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=heavenmin.com/post/31c71a71/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=heavenmin.com/post/31c71a71/&text=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=heavenmin.com/post/31c71a71/&is_video=false&description=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=地球两点大圆距离计算算法 (经度纬度)&body=Check out this article: heavenmin.com/post/31c71a71/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=heavenmin.com/post/31c71a71/&name=地球两点大圆距离计算算法 (经度纬度)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Haversine-formula-半正矢公式"><span class="toc-number">1.</span> <span class="toc-text">Haversine formula (半正矢公式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vincenty’s-formulae"><span class="toc-number">2.</span> <span class="toc-text">Vincenty’s formulae</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        地球两点大圆距离计算算法 (经度纬度)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Heaven</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-07-18T12:25:59.000Z" itemprop="datePublished">2018-07-18</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/geospatial/">geospatial</a>, <a class="tag-link" href="/tags/great-circle-distance/">great-circle-distance</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>The great-circle distance or orthodromic distance is the shortest distance between two points on the surface of a sphere, measured along the surface of the sphere (as opposed to a straight line through the sphere’s interior). The distance between two points in Euclidean space is the length of a straight line between them, but on the sphere there are no straight lines. In spaces with curvature, straight lines are replaced by geodesics. Geodesics on the sphere are circles on the sphere whose centers coincide with the center of the sphere, and are called great circles. –wiki</p>
+</blockquote>
+<p><strong>大圆距离</strong> (Great-circle distance) 是指从球面的一点到球面的另一点所经过的最短路径的长度。一般是连接这两个点较短的一条弧的长度。</p>
+<p>地理位置两点之间的距离，就是这个大圆距离。想要计算这个大圆距离，并不能直接用类似在直角坐标系中通过勾股定理计算直线距离那样计算。地理位置信息一般采用经度和纬度，以弧度制度量。一般有两种算法来计算：</p>
+<ul>
+<li>如果将地球当作球体 (sphere)<ul>
+<li>使用 半正矢公式 (Haversine formula)</li>
+</ul>
+</li>
+<li>如果将地球当作椭球体 (ellipsoid)<ul>
+<li>使用 Vincenty’s formulae</li>
+</ul>
+</li>
+</ul>
+<p>Vincenty’s formulae 由于将地球当作椭球体来计算，会有更高的精度， 但是计算效率会比Haversine formula略低。</p>
+<h2 id="Haversine-formula-半正矢公式"><a href="#Haversine-formula-半正矢公式" class="headerlink" title="Haversine formula (半正矢公式)"></a>Haversine formula (半正矢公式)</h2><p>以下是一个通过 Haversine formula 用已知两点经度纬度的前提下，计算出大圆距离的代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3</span></span><br><span class="line">__author__ = <span class="string">'Min'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">EARTH_RADUIS = <span class="number">6378.137</span>    <span class="comment"># kilometre</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDistance</span><span class="params">(lat1, long1, lat2, long2, decimal_digits=<span class="number">6</span>)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    Function to get two-point distance by longtitude and latitude</span></span><br><span class="line"><span class="string">    average runtime for this function is about 0.000006 sec.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Eample:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; getDistance(-35.308228, 149.124358, -33.868883, 151.209301)</span></span><br><span class="line"><span class="string">    249.349728</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; getDistance(-37.813971, 144.962921, -33.868883, 151.209301)</span></span><br><span class="line"><span class="string">    714.257887</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; getDistance(-37.813971, 144.962921, 31.231981, 121.492631)</span></span><br><span class="line"><span class="string">    8063.801696</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; getDistance(-37.813971, 144.962921, 31.231981, 121.492631, 3)</span></span><br><span class="line"><span class="string">    8063.802</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="keyword">assert</span> abs(lat1) &lt;= <span class="number">90</span> <span class="keyword">and</span> abs(lat2) &lt;= <span class="number">90</span>, <span class="string">"invalid latitude"</span></span><br><span class="line">    <span class="keyword">assert</span> abs(long1) &lt;= <span class="number">180</span> <span class="keyword">and</span> abs(long2) &lt;= <span class="number">180</span>, <span class="string">"invalid longtigude"</span></span><br><span class="line">    rad_lat1 = math.radians(lat1)</span><br><span class="line">    rad_lat2 = math.radians(lat2)</span><br><span class="line">    rad_long1 = math.radians(long1)</span><br><span class="line">    rad_long2 = math.radians(long2)</span><br><span class="line">    a = rad_lat1 - rad_lat2</span><br><span class="line">    b = rad_long1 - rad_long2</span><br><span class="line">    s = (<span class="number">2</span> * math.asin(math.sqrt(math.pow(math.sin(a / <span class="number">2</span>), <span class="number">2</span>) +</span><br><span class="line">         math.cos(rad_lat1) * math.cos(rad_lat2) *</span><br><span class="line">         math.pow(math.sin(b / <span class="number">2</span>), <span class="number">2</span>))))</span><br><span class="line">    distance = s * EARTH_RADUIS</span><br><span class="line">    <span class="keyword">return</span> round(distance,decimal_digits)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># Canberra to Sydney</span></span><br><span class="line">    print(getDistance(<span class="number">-35.308228</span>, <span class="number">149.124358</span>, <span class="number">-33.868883</span>, <span class="number">151.209301</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Melbourne to Sydney</span></span><br><span class="line">    print(getDistance(<span class="number">-37.813971</span>, <span class="number">144.962921</span>, <span class="number">-33.868883</span>, <span class="number">151.209301</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Melbourne to Shanghai</span></span><br><span class="line">    print(getDistance(<span class="number">-37.813971</span>, <span class="number">144.962921</span>, <span class="number">31.231981</span>, <span class="number">121.492631</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">import</span> doctest</span><br><span class="line">    doctest.testmod()</span><br><span class="line">    _main()</span><br></pre></td></tr></table></figure></p>
+<p>通过测试数据得知:<br>From  | To    | Distance (km)<br>–    | –    | –<br>堪培拉 | 悉尼   | 249.349728<br>墨尔本 | 悉尼   | 714.257887<br>墨尔本 | 上海   | 8063.801696</p>
+<p>还是比较精确的。 在不需要太精准的情况，可以使用Haversine formula (半正矢公式)来计算地球上两点之间的大圆距离。</p>
+<h2 id="Vincenty’s-formulae"><a href="#Vincenty’s-formulae" class="headerlink" title="Vincenty’s formulae"></a>Vincenty’s formulae</h2><p>-TODO (heaven): implement the code</p>
+
+    <br>
+    <div class="article-license">
+   	<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square" alt="License: CC BY-NC-SA 4.0" align="left" >
+    </a>
+</div>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Haversine-formula-半正矢公式"><span class="toc-number">1.</span> <span class="toc-text">Haversine formula (半正矢公式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vincenty’s-formulae"><span class="toc-number">2.</span> <span class="toc-text">Vincenty’s formulae</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=heavenmin.com/post/31c71a71/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=heavenmin.com/post/31c71a71/&text=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=heavenmin.com/post/31c71a71/&is_video=false&description=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=地球两点大圆距离计算算法 (经度纬度)&body=Check out this article: heavenmin.com/post/31c71a71/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=heavenmin.com/post/31c71a71/&title=地球两点大圆距离计算算法 (经度纬度)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=heavenmin.com/post/31c71a71/&name=地球两点大圆距离计算算法 (经度纬度)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Heaven 
+    | Licence:
+    <li><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></li>
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/Search/">Search</a></li>
+        
+        <li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-120174290-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'heavenmin';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
