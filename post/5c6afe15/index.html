@@ -15,7 +15,7 @@
 <meta property="og:description" content="Git SyntaxGit Workflow Git Version Control Rules Commit related changes Test code before you commit Use branches Commit often Write good commit messages Agree on a workflow Don’t commit half-done work">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/other_image/git_workflow.png?raw=true">
-<meta property="og:updated_time" content="2018-08-29T09:21:23.543Z">
+<meta property="og:updated_time" content="2018-08-29T09:29:33.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Syntax">
 <meta name="twitter:description" content="Git SyntaxGit Workflow Git Version Control Rules Commit related changes Test code before you commit Use branches Commit often Write good commit messages Agree on a workflow Don’t commit half-done work">
@@ -167,7 +167,7 @@
 </thead>
 <tbody>
 <tr>
-<td>git help \&lt;command></td>
+<td><code>git help &lt;command&gt;</code></td>
 <td>N/A</td>
 <td><em>获得命令的帮助指南</em></td>
 </tr>
@@ -177,12 +177,12 @@
 <td></td>
 </tr>
 <tr>
-<td>git init</td>
+<td><code>git init</code></td>
 <td>N/A</td>
 <td><em>Git仓库初始化</em></td>
 </tr>
 <tr>
-<td>git clone \&lt;address></td>
+<td><code>git clone &lt;address&gt;</code></td>
 <td>N/A</td>
 <td><em>克隆一个现存的库</em></td>
 </tr>
@@ -192,42 +192,42 @@
 <td></td>
 </tr>
 <tr>
-<td>git add \&lt;file></td>
+<td><code>git add &lt;file&gt;</code></td>
 <td>ga &lt;&gt;</td>
 <td><em>添加指定文件</em></td>
 </tr>
 <tr>
-<td>git add –all / git add .</td>
+<td><code>git add --all / git add .</code></td>
 <td><strong>gaa</strong></td>
 <td><em>添加所有修改文件</em></td>
 </tr>
 <tr>
-<td>git commit -m “info”</td>
+<td><code>git commit -m &quot;info&quot;</code></td>
 <td><strong>gcmsg “”</strong></td>
 <td><em>提交文件到仓库</em></td>
 </tr>
 <tr>
-<td>git commit –amend</td>
+<td><code>git commit --amend</code></td>
 <td>N/A</td>
 <td><em>修改上一次commit内容</em></td>
 </tr>
 <tr>
-<td>git status</td>
+<td><code>git status</code></td>
 <td><strong>gst</strong></td>
 <td><em>检查仓库当前状态</em></td>
 </tr>
 <tr>
-<td>git status -sb</td>
+<td><code>git status -sb</code></td>
 <td><strong>gsb</strong></td>
 <td><em>精简检查仓库状态</em></td>
 </tr>
 <tr>
-<td>git diff</td>
+<td><code>git diff</code></td>
 <td>gd</td>
 <td><em>查看修改内容</em></td>
 </tr>
 <tr>
-<td>git diff HEAD – \&lt;file></td>
+<td><code>git diff HEAD -- &lt;file&gt;</code></td>
 <td>N/A</td>
 <td><em>查看工作区与版本库的区别</em></td>
 </tr>
@@ -237,17 +237,17 @@
 <td></td>
 </tr>
 <tr>
-<td>git log</td>
+<td><code>git log</code></td>
 <td>glg / g lg</td>
 <td><em>查看历史记录</em></td>
 </tr>
 <tr>
-<td>git reflog</td>
+<td><code>git reflog</code></td>
 <td>N/A</td>
 <td><em>记录每一次命令,可以查要回到未来的版本</em></td>
 </tr>
 <tr>
-<td>git blame \&lt;file></td>
+<td><code>git blame &lt;file&gt;</code></td>
 <td>N/A</td>
 <td><em>查看指定文件的更改记录</em></td>
 </tr>
@@ -257,17 +257,17 @@
 <td></td>
 </tr>
 <tr>
-<td>git reset –hard &lt;HEAD^&gt;</td>
+<td><code>git reset --hard &lt;HEAD^&gt;</code></td>
 <td>grhh &lt;&gt;</td>
 <td><em>回退到指定版本(commit id)</em></td>
 </tr>
 <tr>
-<td>git reset HEAD \&lt;file></td>
+<td><code>git reset HEAD &lt;file&gt;</code></td>
 <td>grh HEAD &lt;&gt;</td>
 <td><em>将暂存区的修改撤销，放回工作区</em></td>
 </tr>
 <tr>
-<td>git checkout – \&lt;file></td>
+<td><code>git checkout -- &lt;file&gt;</code></td>
 <td>gco – &lt;&gt;</td>
 <td><em>撤销最近一次修改</em></td>
 </tr>
@@ -277,72 +277,72 @@
 <td></td>
 </tr>
 <tr>
-<td>git checkout -b \&lt;branchname></td>
+<td><code>git checkout -b &lt;branchname&gt;</code></td>
 <td><strong>gcb &lt;&gt;</strong></td>
 <td><em>创建一个分支并直接切换到该分支</em></td>
 </tr>
 <tr>
-<td>git checkout \&lt;branchname></td>
+<td><code>git checkout &lt;branchname&gt;</code></td>
 <td>gco &lt;&gt;</td>
 <td><em>切换到一个分支</em></td>
 </tr>
 <tr>
-<td>git branch</td>
+<td><code>git branch</code></td>
 <td>gb</td>
 <td><em>查看当前分支</em></td>
 </tr>
 <tr>
-<td>git branch \&lt;branchname></td>
+<td><code>git branch &lt;branchname&gt;</code></td>
 <td>gb &lt;&gt;</td>
 <td><em>创建一个分支</em></td>
 </tr>
 <tr>
-<td>git branch -d \&lt;branchname></td>
+<td><code>git branch -d &lt;branchname&gt;</code></td>
 <td>gbd &lt;&gt;</td>
 <td><em>删除一个分支</em></td>
 </tr>
 <tr>
-<td>git branch -D \&lt;branchname></td>
+<td><code>git branch -D &lt;branchname&gt;</code></td>
 <td>N/A</td>
 <td><em>强制删除一个分支</em></td>
 </tr>
 <tr>
-<td>git merge \&lt;branchname></td>
+<td><code>git merge &lt;branchname&gt;</code></td>
 <td>gm &lt;&gt;</td>
 <td><em>合并分支</em></td>
 </tr>
 <tr>
-<td>git merge –no–ff -m “info” \&lt;b></td>
+<td><code>git merge --no--ff -m &quot;info&quot; &lt;b&gt;</code></td>
 <td>N/A</td>
 <td><em>合并分支并禁用Fast forward</em></td>
 </tr>
 <tr>
-<td>git tag &lt;v1.0&gt;</td>
+<td><code>git tag &lt;v1.0&gt;</code></td>
 <td>N/A</td>
 <td><em>打一个新标签</em></td>
 </tr>
 <tr>
-<td>git tag</td>
+<td><code>git tag</code></td>
 <td>N/A</td>
 <td><em>查看素有标签</em></td>
 </tr>
 <tr>
-<td>git tag &lt;v1.0&gt; \<commit id\=""></commit></td>
+<td><code>git tag &lt;v1.0&gt; &lt;commit id&gt;</code></td>
 <td>N/A</td>
 <td><em>给指定历史提交的commit打标签</em></td>
 </tr>
 <tr>
-<td>git tag -a \&lt;v> -m “info” \&lt;cid></td>
+<td><code>git tag -a &lt;v&gt; -m &quot;info&quot; &lt;cid&gt;</code></td>
 <td>N/A</td>
 <td><em>打标签的同时增加说明文字</em></td>
 </tr>
 <tr>
-<td>git show \&lt;tagname></td>
+<td><code>git show &lt;tagname&gt;</code></td>
 <td>N/A</td>
 <td><em>查看标签信息</em></td>
 </tr>
 <tr>
-<td>git tag -d &lt;v1.0&gt;</td>
+<td><code>git tag -d &lt;v1.0&gt;</code></td>
 <td>N/A</td>
 <td><em>删除指定本地标签</em></td>
 </tr>
@@ -352,32 +352,32 @@
 <td></td>
 </tr>
 <tr>
-<td>git stash</td>
+<td><code>git stash</code></td>
 <td>N/A</td>
 <td><em>将工作区内容储藏起来</em></td>
 </tr>
 <tr>
-<td>git stash save “info”</td>
+<td><code>git stash save &quot;info&quot;</code></td>
 <td>gsta “”</td>
 <td><em>将工作区内容储藏起来,并加注释</em></td>
 </tr>
 <tr>
-<td>git stash list</td>
+<td><code>git stash list</code></td>
 <td>gstl</td>
 <td><em>查看stash列表</em></td>
 </tr>
 <tr>
-<td>git stash pop</td>
+<td><code>git stash pop</code></td>
 <td>gstp</td>
 <td><em>恢复最顶层暂存区并删除</em></td>
 </tr>
 <tr>
-<td>git stash apply &lt;stash@{0}&gt;</td>
+<td><code>git stash apply &lt;stash@{0}&gt;</code></td>
 <td>gstaa &lt;&gt;</td>
 <td><em>恢复指定暂存区</em></td>
 </tr>
 <tr>
-<td>git stash drop &lt;stash@{0}&gt;</td>
+<td><code>git stash drop &lt;stash@{0}&gt;</code></td>
 <td>gstd &lt;&gt;</td>
 <td><em>删除指定暂存区</em></td>
 </tr>
@@ -387,57 +387,57 @@
 <td></td>
 </tr>
 <tr>
-<td>git remote -v</td>
+<td><code>git remote -v</code></td>
 <td>grv</td>
 <td><em>查看远程库信息</em></td>
 </tr>
 <tr>
-<td>git push \<orgin master\=""></orgin></td>
+<td><code>git push &lt;orgin master&gt;</code></td>
 <td>gp &lt;&gt;</td>
 <td><em>推送到远程服务器</em></td>
 </tr>
 <tr>
-<td>git push orgin master</td>
+<td><code>git push orgin master</code></td>
 <td>gpom</td>
 <td><em>推送到远程master分支</em></td>
 </tr>
 <tr>
-<td>git pull</td>
+<td><code>git pull</code></td>
 <td>gl</td>
 <td><em>抓取最新更新</em></td>
 </tr>
 <tr>
-<td>gcb \&lt;branch> origin/\&lt;branch></td>
+<td><code>gcb &lt;branch&gt; origin/&lt;branch&gt;</code></td>
 <td>N/A</td>
 <td><em>在本地创建与远程分支对应的分支</em></td>
 </tr>
 <tr>
-<td>gb –set-upstream-to &lt;&gt; origin/&lt;&gt;</td>
+<td><code>gb --set-upstream-to &lt;&gt; origin/&lt;&gt;</code></td>
 <td>ggsup</td>
 <td><em>建立本地分支与远程分支的链接关系</em></td>
 </tr>
 <tr>
-<td>git branch -dr origin/\&lt;branch></td>
+<td><code>git branch -dr origin/&lt;branch&gt;</code></td>
 <td>N/A</td>
 <td><em>删除远程指定分支</em></td>
 </tr>
 <tr>
-<td>git push origin :refs/tags/v1.0</td>
+<td><code>git push origin :refs/tags/v1.0</code></td>
 <td>N/A</td>
 <td><em>删除远程指定标签</em></td>
 </tr>
 <tr>
-<td>git push origin \&lt;tagname></td>
+<td><code>git push origin &lt;tagname&gt;</code></td>
 <td>N/A</td>
 <td><em>推送指定本地标签到远程</em></td>
 </tr>
 <tr>
-<td>git push origin –tags</td>
+<td><code>git push origin --tags</code></td>
 <td>N/A</td>
 <td><em>推送全部本地标签到远程</em></td>
 </tr>
 <tr>
-<td>git check-ignore -v \&lt;file></td>
+<td><code>git check-ignore -v &lt;file&gt;</code></td>
 <td>N/A</td>
 <td><em>检查忽略规则</em></td>
 </tr>
