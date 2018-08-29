@@ -15,7 +15,7 @@
 <meta property="og:description" content="Git SyntaxGit Workflow Git Version Control Rules Commit related changes Test code before you commit Use branches Commit often Write good commit messages Agree on a workflow Don’t commit half-done work">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://github.com/HeavenMin/material/blob/master/other_image/git_workflow.png?raw=true">
-<meta property="og:updated_time" content="2018-08-16T05:30:09.126Z">
+<meta property="og:updated_time" content="2018-08-29T09:21:23.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Syntax">
 <meta name="twitter:description" content="Git SyntaxGit Workflow Git Version Control Rules Commit related changes Test code before you commit Use branches Commit often Write good commit messages Agree on a workflow Don’t commit half-done work">
@@ -167,7 +167,7 @@
 </thead>
 <tbody>
 <tr>
-<td>git help <command></td>
+<td>git help \&lt;command></td>
 <td>N/A</td>
 <td><em>获得命令的帮助指南</em></td>
 </tr>
@@ -182,7 +182,7 @@
 <td><em>Git仓库初始化</em></td>
 </tr>
 <tr>
-<td>git clone <address></address></td>
+<td>git clone \&lt;address></td>
 <td>N/A</td>
 <td><em>克隆一个现存的库</em></td>
 </tr>
@@ -192,7 +192,7 @@
 <td></td>
 </tr>
 <tr>
-<td>git add <file></file></td>
+<td>git add \&lt;file></td>
 <td>ga &lt;&gt;</td>
 <td><em>添加指定文件</em></td>
 </tr>
@@ -227,7 +227,7 @@
 <td><em>查看修改内容</em></td>
 </tr>
 <tr>
-<td>git diff HEAD – <file></file></td>
+<td>git diff HEAD – \&lt;file></td>
 <td>N/A</td>
 <td><em>查看工作区与版本库的区别</em></td>
 </tr>
@@ -247,7 +247,7 @@
 <td><em>记录每一次命令,可以查要回到未来的版本</em></td>
 </tr>
 <tr>
-<td>git blame <file></file></td>
+<td>git blame \&lt;file></td>
 <td>N/A</td>
 <td><em>查看指定文件的更改记录</em></td>
 </tr>
@@ -262,12 +262,12 @@
 <td><em>回退到指定版本(commit id)</em></td>
 </tr>
 <tr>
-<td>git reset HEAD <file></file></td>
+<td>git reset HEAD \&lt;file></td>
 <td>grh HEAD &lt;&gt;</td>
 <td><em>将暂存区的修改撤销，放回工作区</em></td>
 </tr>
 <tr>
-<td>git checkout – <file></file></td>
+<td>git checkout – \&lt;file></td>
 <td>gco – &lt;&gt;</td>
 <td><em>撤销最近一次修改</em></td>
 </tr>
@@ -277,12 +277,12 @@
 <td></td>
 </tr>
 <tr>
-<td>git checkout -b <branchname></branchname></td>
+<td>git checkout -b \&lt;branchname></td>
 <td><strong>gcb &lt;&gt;</strong></td>
 <td><em>创建一个分支并直接切换到该分支</em></td>
 </tr>
 <tr>
-<td>git checkout <branchname></branchname></td>
+<td>git checkout \&lt;branchname></td>
 <td>gco &lt;&gt;</td>
 <td><em>切换到一个分支</em></td>
 </tr>
@@ -292,27 +292,27 @@
 <td><em>查看当前分支</em></td>
 </tr>
 <tr>
-<td>git branch <branchname></branchname></td>
+<td>git branch \&lt;branchname></td>
 <td>gb &lt;&gt;</td>
 <td><em>创建一个分支</em></td>
 </tr>
 <tr>
-<td>git branch -d <branchname></branchname></td>
+<td>git branch -d \&lt;branchname></td>
 <td>gbd &lt;&gt;</td>
 <td><em>删除一个分支</em></td>
 </tr>
 <tr>
-<td>git branch -D <branchname></branchname></td>
+<td>git branch -D \&lt;branchname></td>
 <td>N/A</td>
 <td><em>强制删除一个分支</em></td>
 </tr>
 <tr>
-<td>git merge <branchname></branchname></td>
+<td>git merge \&lt;branchname></td>
 <td>gm &lt;&gt;</td>
 <td><em>合并分支</em></td>
 </tr>
 <tr>
-<td>git merge –no–ff -m “info” <b></b></td>
+<td>git merge –no–ff -m “info” \&lt;b></td>
 <td>N/A</td>
 <td><em>合并分支并禁用Fast forward</em></td>
 </tr>
@@ -327,17 +327,17 @@
 <td><em>查看素有标签</em></td>
 </tr>
 <tr>
-<td>git tag &lt;v1.0&gt; <commit id=""></commit></td>
+<td>git tag &lt;v1.0&gt; \<commit id\=""></commit></td>
 <td>N/A</td>
 <td><em>给指定历史提交的commit打标签</em></td>
 </tr>
 <tr>
-<td>git tag -a <v> -m “info” <cid></cid></v></td>
+<td>git tag -a \&lt;v> -m “info” \&lt;cid></td>
 <td>N/A</td>
 <td><em>打标签的同时增加说明文字</em></td>
 </tr>
 <tr>
-<td>git show <tagname></tagname></td>
+<td>git show \&lt;tagname></td>
 <td>N/A</td>
 <td><em>查看标签信息</em></td>
 </tr>
@@ -392,7 +392,7 @@
 <td><em>查看远程库信息</em></td>
 </tr>
 <tr>
-<td>git push <orgin master=""></orgin></td>
+<td>git push \<orgin master\=""></orgin></td>
 <td>gp &lt;&gt;</td>
 <td><em>推送到远程服务器</em></td>
 </tr>
@@ -407,7 +407,7 @@
 <td><em>抓取最新更新</em></td>
 </tr>
 <tr>
-<td>gcb <branch> origin/<branch></branch></branch></td>
+<td>gcb \&lt;branch> origin/\&lt;branch></td>
 <td>N/A</td>
 <td><em>在本地创建与远程分支对应的分支</em></td>
 </tr>
@@ -417,7 +417,7 @@
 <td><em>建立本地分支与远程分支的链接关系</em></td>
 </tr>
 <tr>
-<td>git branch -dr origin/<branch></branch></td>
+<td>git branch -dr origin/\&lt;branch></td>
 <td>N/A</td>
 <td><em>删除远程指定分支</em></td>
 </tr>
@@ -427,7 +427,7 @@
 <td><em>删除远程指定标签</em></td>
 </tr>
 <tr>
-<td>git push origin <tagname></tagname></td>
+<td>git push origin \&lt;tagname></td>
 <td>N/A</td>
 <td><em>推送指定本地标签到远程</em></td>
 </tr>
@@ -437,7 +437,7 @@
 <td><em>推送全部本地标签到远程</em></td>
 </tr>
 <tr>
-<td>git check-ignore -v <file></file></td>
+<td>git check-ignore -v \&lt;file></td>
 <td>N/A</td>
 <td><em>检查忽略规则</em></td>
 </tr>
