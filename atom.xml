@@ -72,9 +72,9 @@
     
       <category term="python" scheme="heavenmin.com/tags/python/"/>
     
-      <category term="swift" scheme="heavenmin.com/tags/swift/"/>
-    
       <category term="syntax" scheme="heavenmin.com/tags/syntax/"/>
+    
+      <category term="swift" scheme="heavenmin.com/tags/swift/"/>
     
   </entry>
   
@@ -131,9 +131,9 @@
     
       <category term="python" scheme="heavenmin.com/tags/python/"/>
     
-      <category term="data-structure" scheme="heavenmin.com/tags/data-structure/"/>
-    
       <category term="swift" scheme="heavenmin.com/tags/swift/"/>
+    
+      <category term="data-structure" scheme="heavenmin.com/tags/data-structure/"/>
     
   </entry>
   
