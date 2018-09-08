@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Heaven">
 <meta property="og:description" content="The Ultimate Programming Language Syntax Cheat Sheet - 终极编程语法速查Now include language: python3 swift4   Operators - 运算符Arithmetic operators - 算术运算符| swift | python –  | –    | –加  | +   | +减  | -   | -乘">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T01:00:57.707Z">
+<meta property="og:updated_time" content="2018-09-08T02:06:52.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ultimate Syntax Cheat Sheet">
 <meta name="twitter:description" content="The Ultimate Programming Language Syntax Cheat Sheet - 终极编程语法速查Now include language: python3 swift4   Operators - 运算符Arithmetic operators - 算术运算符| swift | python –  | –    | –加  | +   | +减  | -   | -乘">
@@ -210,7 +210,41 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'filename'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:    <span class="comment">#'r': 只读    'a': 追加</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="comment"># other method</span></span><br><span class="line">f.read(size)</span><br><span class="line">f.readline()</span><br><span class="line">list(f)</span><br><span class="line">f.readlines()</span><br><span class="line">f.write(<span class="string">'string'</span>)</span><br><span class="line">f.tell()</span><br><span class="line">f.seek(offset, from_what)</span><br></pre></td></tr></table></figure>
 <h3 id="JSON-序列化与反序列化"><a href="#JSON-序列化与反序列化" class="headerlink" title="JSON 序列化与反序列化"></a>JSON 序列化与反序列化</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// swift</span></span><br><span class="line"><span class="comment">// TODO</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">my_list = [<span class="number">1</span>, <span class="string">'simple'</span>, <span class="string">'list'</span>]</span><br><span class="line">json.dumps(my_list)</span><br><span class="line">json.dump(my_list, file)  <span class="comment"># write json type list to file</span></span><br><span class="line">json.load(file)</span><br></pre></td></tr></table></figure>
-<p><code>python</code><br>JSON类型    | python<br>–         | –<br>{}         | dict<br>[]         | list<br>“string”   | str<br>12345.56   | int/float<br>true/false | True/False<br>null       | None</p>
+<p><code>python</code></p>
+<table>
+<thead>
+<tr>
+<th>JSON类型</th>
+<th>python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{}</td>
+<td>dict</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>list</td>
+</tr>
+<tr>
+<td>“string”</td>
+<td>str</td>
+</tr>
+<tr>
+<td>12345.56</td>
+<td>int/float</td>
+</tr>
+<tr>
+<td>true/false</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>null</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><a href="https://docs.python.org/3/library/json.html#module-json" target="_blank" rel="noopener">Python json</a></p>
 </blockquote>
