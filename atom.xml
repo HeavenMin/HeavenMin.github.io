@@ -3,11 +3,11 @@
   <title>Heaven</title>
   
   
-  <link href="https://heavenmin.com/atom.xml" rel="self"/>
+  <link href="https://minpe.com/atom.xml" rel="self"/>
   
-  <link href="https://heavenmin.com/"/>
+  <link href="https://minpe.com/"/>
   <updated>2025-12-08T04:15:54.174Z</updated>
-  <id>https://heavenmin.com/</id>
+  <id>https://minpe.com/</id>
   
   <author>
     <name>Heaven</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Quick Zsh Setup: Oh My Zsh, Homebrew, Antidote, Autojump</title>
-    <link href="https://heavenmin.com/post/94a2fc75/"/>
-    <id>https://heavenmin.com/post/94a2fc75/</id>
+    <link href="https://minpe.com/post/94a2fc75/"/>
+    <id>https://minpe.com/post/94a2fc75/</id>
     <published>2018-08-08T03:54:45.000Z</published>
     <updated>2025-12-08T04:15:54.174Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>地球两点大圆距离计算算法 (经度纬度)</title>
-    <link href="https://heavenmin.com/post/31c71a71/"/>
-    <id>https://heavenmin.com/post/31c71a71/</id>
+    <link href="https://minpe.com/post/31c71a71/"/>
+    <id>https://minpe.com/post/31c71a71/</id>
     <published>2018-07-18T14:25:59.000Z</published>
     <updated>2018-09-07T13:06:02.000Z</updated>
     
@@ -55,23 +55,23 @@
     
     
     
-    <category term="computer science" scheme="https://heavenmin.com/categories/computer-science/"/>
+    <category term="computer science" scheme="https://minpe.com/categories/computer-science/"/>
     
     
-    <category term="algorithm" scheme="https://heavenmin.com/tags/algorithm/"/>
+    <category term="algorithm" scheme="https://minpe.com/tags/algorithm/"/>
     
-    <category term="python" scheme="https://heavenmin.com/tags/python/"/>
+    <category term="python" scheme="https://minpe.com/tags/python/"/>
     
-    <category term="great-circle-distance" scheme="https://heavenmin.com/tags/great-circle-distance/"/>
+    <category term="great-circle-distance" scheme="https://minpe.com/tags/great-circle-distance/"/>
     
-    <category term="geospatial" scheme="https://heavenmin.com/tags/geospatial/"/>
+    <category term="geospatial" scheme="https://minpe.com/tags/geospatial/"/>
     
   </entry>
   
   <entry>
     <title>Ultimate Syntax Cheat Sheet</title>
-    <link href="https://heavenmin.com/post/3001c9cc/"/>
-    <id>https://heavenmin.com/post/3001c9cc/</id>
+    <link href="https://minpe.com/post/3001c9cc/"/>
+    <id>https://minpe.com/post/3001c9cc/</id>
     <published>2016-08-24T14:50:12.000Z</published>
     <updated>2018-09-08T05:29:15.000Z</updated>
     
@@ -86,21 +86,21 @@
     
     
     
-    <category term="computer science" scheme="https://heavenmin.com/categories/computer-science/"/>
+    <category term="computer science" scheme="https://minpe.com/categories/computer-science/"/>
     
     
-    <category term="python" scheme="https://heavenmin.com/tags/python/"/>
+    <category term="python" scheme="https://minpe.com/tags/python/"/>
     
-    <category term="swift" scheme="https://heavenmin.com/tags/swift/"/>
+    <category term="swift" scheme="https://minpe.com/tags/swift/"/>
     
-    <category term="syntax" scheme="https://heavenmin.com/tags/syntax/"/>
+    <category term="syntax" scheme="https://minpe.com/tags/syntax/"/>
     
   </entry>
   
   <entry>
     <title>Git Syntax</title>
-    <link href="https://heavenmin.com/post/5c6afe15/"/>
-    <id>https://heavenmin.com/post/5c6afe15/</id>
+    <link href="https://minpe.com/post/5c6afe15/"/>
+    <id>https://minpe.com/post/5c6afe15/</id>
     <published>2016-07-01T08:10:24.000Z</published>
     <updated>2018-09-07T13:05:43.000Z</updated>
     
@@ -114,19 +114,19 @@
     
     
     
-    <category term="computer science" scheme="https://heavenmin.com/categories/computer-science/"/>
+    <category term="computer science" scheme="https://minpe.com/categories/computer-science/"/>
     
     
-    <category term="git" scheme="https://heavenmin.com/tags/git/"/>
+    <category term="git" scheme="https://minpe.com/tags/git/"/>
     
-    <category term="github" scheme="https://heavenmin.com/tags/github/"/>
+    <category term="github" scheme="https://minpe.com/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Algorithm and Data Structure Summary</title>
-    <link href="https://heavenmin.com/post/1398f2ea/"/>
-    <id>https://heavenmin.com/post/1398f2ea/</id>
+    <link href="https://minpe.com/post/1398f2ea/"/>
+    <id>https://minpe.com/post/1398f2ea/</id>
     <published>2016-06-10T13:52:42.000Z</published>
     <updated>2018-09-07T13:06:09.000Z</updated>
     
@@ -141,23 +141,23 @@
     
     
     
-    <category term="computer science" scheme="https://heavenmin.com/categories/computer-science/"/>
+    <category term="computer science" scheme="https://minpe.com/categories/computer-science/"/>
     
     
-    <category term="algorithm" scheme="https://heavenmin.com/tags/algorithm/"/>
+    <category term="algorithm" scheme="https://minpe.com/tags/algorithm/"/>
     
-    <category term="data-structure" scheme="https://heavenmin.com/tags/data-structure/"/>
+    <category term="data-structure" scheme="https://minpe.com/tags/data-structure/"/>
     
-    <category term="python" scheme="https://heavenmin.com/tags/python/"/>
+    <category term="python" scheme="https://minpe.com/tags/python/"/>
     
-    <category term="swift" scheme="https://heavenmin.com/tags/swift/"/>
+    <category term="swift" scheme="https://minpe.com/tags/swift/"/>
     
   </entry>
   
   <entry>
     <title>Markdown Syntax</title>
-    <link href="https://heavenmin.com/post/42d6409f/"/>
-    <id>https://heavenmin.com/post/42d6409f/</id>
+    <link href="https://minpe.com/post/42d6409f/"/>
+    <id>https://minpe.com/post/42d6409f/</id>
     <published>2016-05-30T01:38:13.000Z</published>
     <updated>2018-09-07T13:05:31.000Z</updated>
     
@@ -171,12 +171,12 @@
     
     
     
-    <category term="computer science" scheme="https://heavenmin.com/categories/computer-science/"/>
+    <category term="computer science" scheme="https://minpe.com/categories/computer-science/"/>
     
-    <category term="language" scheme="https://heavenmin.com/categories/computer-science/language/"/>
+    <category term="language" scheme="https://minpe.com/categories/computer-science/language/"/>
     
     
-    <category term="markdown" scheme="https://heavenmin.com/tags/markdown/"/>
+    <category term="markdown" scheme="https://minpe.com/tags/markdown/"/>
     
   </entry>
   
