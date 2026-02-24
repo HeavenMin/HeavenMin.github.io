@@ -1326,6 +1326,173 @@ article .content .caption {
   padding-bottom: 0.5em;
   color: #c9cacc;
 }
+.dino-runner {
+  margin: 1.5rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.dino-modebar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+}
+.dino-modebar-label {
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 600;
+}
+.dino-segment {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid #666;
+  border-radius: 999px;
+  background: rgba(102,102,102,0.18);
+}
+.dino-segment input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.dino-segment label {
+  min-width: 74px;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.dino-segment input:checked + label {
+  background: #d480aa;
+  color: #fff;
+}
+#dino-canvas {
+  width: 100%;
+  max-width: 960px;
+  border: 1px solid #666;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #25282b 0%, #1d1f21 40%, #2e3134 100%);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+}
+.dino-cooldowns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+}
+.dino-cd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.dino-cd-label {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+}
+.dino-cd-ring {
+  --angle: 360deg;
+  --ring-color: #d480aa;
+  --ring-ready-color: #d88db3;
+  --ring-track-color: #828282;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Menlo", "Meslo LG", monospace;
+  font-size: 0.85rem;
+  color: #c9cacc;
+  background: radial-gradient(circle at center, #1d1f21 62%, transparent 63%), conic-gradient(var(--ring-color) var(--angle), var(--ring-track-color) 0deg);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.dino-cd-ring[data-state="cooldown"] {
+  color: #c9cacc;
+}
+.dino-cd-ring[data-state="ready"] {
+  background: radial-gradient(circle at center, #1d1f21 62%, transparent 63%), conic-gradient(var(--ring-ready-color) 360deg, var(--ring-track-color) 0deg);
+}
+#dino-dash-cd-p1,
+#dino-blink-cd-p1,
+#dino-swap-cd-p1 {
+  --ring-color: #2563eb;
+  --ring-ready-color: #60a5fa;
+  --ring-track-color: #cbd5e1;
+}
+#dino-dash-cd-p2,
+#dino-blink-cd-p2,
+#dino-swap-cd-p2 {
+  --ring-color: #dc2626;
+  --ring-ready-color: #f87171;
+  --ring-track-color: #e5b5b5;
+}
+#dino-cd-p2-dash-wrap .dino-cd-label,
+#dino-cd-p2-blink-wrap .dino-cd-label,
+#dino-cd-p2-swap-wrap .dino-cd-label {
+  color: #b91c1c;
+}
+#dino-dash-cd-p1 + .dino-cd-label,
+#dino-blink-cd-p1 + .dino-cd-label,
+#dino-swap-cd-p1 + .dino-cd-label {
+  color: #1d4ed8;
+}
+.dino-cd-value {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  min-width: 32px;
+}
+.dino-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+.dino-score {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Menlo", "Meslo LG", monospace;
+  font-size: 1.1rem;
+}
+.dino-status {
+  color: #666;
+  font-size: 0.95rem;
+}
+.dino-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.dino-controls span {
+  padding: 0.35rem 0.55rem;
+  border: 1px dashed #666;
+  border-radius: 4px;
+  background: rgba(102,102,102,0.12);
+  font-size: 0.9rem;
+}
+@media (max-width: 640px) {
+  #dino-canvas {
+    max-width: 100%;
+  }
+  .dino-modebar {
+    flex-wrap: wrap;
+  }
+  .dino-score {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 .highlight {
   background: #474949;
   color: #d1d9e1;
