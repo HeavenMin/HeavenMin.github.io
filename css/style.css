@@ -1423,26 +1423,30 @@ article .content .caption {
 }
 #dino-dash-cd-p1,
 #dino-blink-cd-p1,
-#dino-swap-cd-p1 {
+#dino-swap-cd-p1,
+#dino-furball-cd-p1 {
   --ring-color: #2563eb;
   --ring-ready-color: #60a5fa;
   --ring-track-color: #cbd5e1;
 }
 #dino-dash-cd-p2,
 #dino-blink-cd-p2,
-#dino-swap-cd-p2 {
+#dino-swap-cd-p2,
+#dino-furball-cd-p2 {
   --ring-color: #dc2626;
   --ring-ready-color: #f87171;
   --ring-track-color: #e5b5b5;
 }
 #dino-cd-p2-dash-wrap .dino-cd-label,
 #dino-cd-p2-blink-wrap .dino-cd-label,
-#dino-cd-p2-swap-wrap .dino-cd-label {
+#dino-cd-p2-swap-wrap .dino-cd-label,
+#dino-cd-p2-furball-wrap .dino-cd-label {
   color: #b91c1c;
 }
 #dino-dash-cd-p1 + .dino-cd-label,
 #dino-blink-cd-p1 + .dino-cd-label,
-#dino-swap-cd-p1 + .dino-cd-label {
+#dino-swap-cd-p1 + .dino-cd-label,
+#dino-furball-cd-p1 + .dino-cd-label {
   color: #1d4ed8;
 }
 .dino-cd-value {

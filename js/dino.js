@@ -20,9 +20,12 @@
     const blinkCdP2El = document.getElementById('dino-blink-cd-p2');
     const swapCdP1El = document.getElementById('dino-swap-cd-p1');
     const swapCdP2El = document.getElementById('dino-swap-cd-p2');
+    const furballCdP1El = document.getElementById('dino-furball-cd-p1');
+    const furballCdP2El = document.getElementById('dino-furball-cd-p2');
     const dashCdP2WrapEl = document.getElementById('dino-cd-p2-dash-wrap');
     const blinkCdP2WrapEl = document.getElementById('dino-cd-p2-blink-wrap');
     const swapCdP2WrapEl = document.getElementById('dino-cd-p2-swap-wrap');
+    const furballCdP2WrapEl = document.getElementById('dino-cd-p2-furball-wrap');
 
     const dashCdP1Value = dashCdP1El ? dashCdP1El.querySelector('.dino-cd-value') : null;
     const blinkCdP1Value = blinkCdP1El ? blinkCdP1El.querySelector('.dino-cd-value') : null;
@@ -30,13 +33,16 @@
     const blinkCdP2Value = blinkCdP2El ? blinkCdP2El.querySelector('.dino-cd-value') : null;
     const swapCdP1Value = swapCdP1El ? swapCdP1El.querySelector('.dino-cd-value') : null;
     const swapCdP2Value = swapCdP2El ? swapCdP2El.querySelector('.dino-cd-value') : null;
+    const furballCdP1Value = furballCdP1El ? furballCdP1El.querySelector('.dino-cd-value') : null;
+    const furballCdP2Value = furballCdP2El ? furballCdP2El.querySelector('.dino-cd-value') : null;
 
     if (
       !canvas || !scoreP1El || !bestP1El || !scoreP2El || !bestP2El || !statusEl ||
-      !dashCdP1El || !blinkCdP1El || !dashCdP2El || !blinkCdP2El || !swapCdP1El || !swapCdP2El ||
+      !dashCdP1El || !blinkCdP1El || !dashCdP2El || !blinkCdP2El || !swapCdP1El || !swapCdP2El || !furballCdP1El || !furballCdP2El ||
       !dashCdP1Value || !blinkCdP1Value || !dashCdP2Value || !blinkCdP2Value || !swapCdP1Value || !swapCdP2Value ||
+      !furballCdP1Value || !furballCdP2Value ||
       !modeInputs.length || !p2ScoreWrapEl || !p2BestWrapEl || !controlsP1El || !controlsP2El ||
-      !controlsRestartEl || !dashCdP2WrapEl || !blinkCdP2WrapEl || !swapCdP2WrapEl
+      !controlsRestartEl || !dashCdP2WrapEl || !blinkCdP2WrapEl || !swapCdP2WrapEl || !furballCdP2WrapEl
     ) {
       return;
     }
@@ -68,6 +74,13 @@
       },
       laneSwap: {
         cooldown: 10
+      },
+      furball: {
+        speedX: 760,
+        initialVy: -420,
+        gravity: 1300,
+        cooldown: 4,
+        radius: 7
       },
       revive: {
         graceMs: 650
@@ -116,7 +129,7 @@
     };
 
     const lanes = [
-      makeLane(0, false, { jump: ['w', 'W'], dash: ['a', 'A'], blink: ['s', 'S'], swap: ['d', 'D'] }, {
+      makeLane(0, false, { jump: ['w', 'W'], dash: ['a', 'A'], blink: ['s', 'S'], swap: ['d', 'D'], furball: ['f', 'F'] }, {
         scoreEl: scoreP1El,
         bestEl: bestP1El,
         dashEl: dashCdP1El,
@@ -124,7 +137,7 @@
         blinkEl: blinkCdP1El,
         blinkValueEl: blinkCdP1Value
       }),
-      makeLane(1, true, { jump: ['i', 'I'], dash: ['j', 'J'], blink: ['k', 'K'], swap: ['l', 'L'] }, {
+      makeLane(1, true, { jump: ['i', 'I'], dash: ['j', 'J'], blink: ['k', 'K'], swap: ['l', 'L'], furball: [';', ':'] }, {
         scoreEl: scoreP2El,
         bestEl: bestP2El,
         dashEl: dashCdP2El,
@@ -148,6 +161,8 @@
         obstacleCursor: 0,
         rng: mulberry32(1337 + id * 1009),
         blinkEffects: [],
+        furballs: [],
+        furballBursts: [],
         skillCallout: null,
         deathState: null,
         player: {
@@ -167,6 +182,7 @@
           dashReadyAt: 0,
           blinkReadyAt: 0,
           swapReadyAt: 0,
+          furballReadyAt: 0,
           invulnerableUntil: 0,
           animTime: 0,
           worldDistance: 0,
@@ -271,12 +287,15 @@
       p.dashReadyAt = 0;
       p.blinkReadyAt = 0;
       p.swapReadyAt = 0;
+      p.furballReadyAt = 0;
       p.invulnerableUntil = 0;
       p.animTime = 0;
       p.worldDistance = 0;
       p.elapsedTime = 0;
       p.score = 0;
       lane.blinkEffects = [];
+      lane.furballs = [];
+      lane.furballBursts = [];
       lane.skillCallout = null;
       lane.deathState = null;
       buildObstacleMap(lane);
@@ -352,6 +371,8 @@
       });
       updateRing(swapCdP1El, swapCdP1Value, lanes[0].player.swapReadyAt, config.laneSwap.cooldown * 1000, now);
       updateRing(swapCdP2El, swapCdP2Value, lanes[1].player.swapReadyAt, config.laneSwap.cooldown * 1000, now);
+      updateRing(furballCdP1El, furballCdP1Value, lanes[0].player.furballReadyAt, config.furball.cooldown * 1000, now);
+      updateRing(furballCdP2El, furballCdP2Value, lanes[1].player.furballReadyAt, config.furball.cooldown * 1000, now);
     }
 
     function updatePlayerScore(lane) {
@@ -411,6 +432,19 @@
       lane.skillCallout = { text: 'Blink!', start: now, end: now + config.skillCallout.duration };
     }
 
+    function triggerFurball(lane, now) {
+      const p = lane.player;
+      if (state.isGameOver || !p.isAlive || now < p.furballReadyAt) return;
+      lane.furballs.push({
+        worldX: p.worldDistance + p.x + p.width * 0.8,
+        y: p.y + p.height * 0.56,
+        vy: lane.gravityDir * config.furball.initialVy,
+        radius: config.furball.radius
+      });
+      p.furballReadyAt = now + config.furball.cooldown * 1000;
+      lane.skillCallout = { text: 'Furball!', start: now, end: now + config.skillCallout.duration };
+    }
+
     function alignLaneToGround(lane) {
       const p = lane.player;
       p.isJumping = false;
@@ -433,6 +467,14 @@
       const distance = laneA.player.worldDistance;
       laneA.player.worldDistance = laneB.player.worldDistance;
       laneB.player.worldDistance = distance;
+
+      const furballs = laneA.furballs;
+      laneA.furballs = laneB.furballs;
+      laneB.furballs = furballs;
+
+      const bursts = laneA.furballBursts;
+      laneA.furballBursts = laneB.furballBursts;
+      laneB.furballBursts = bursts;
     }
 
     function triggerLaneSwap(casterLane, now) {
@@ -543,6 +585,55 @@
       ) {
         lane.obstacleCursor += 1;
       }
+    }
+
+    function updateFurballs(lane, dt, now) {
+      if (!lane.furballs.length) return;
+
+      const speedX = config.furball.speedX;
+      const minX = lane.player.worldDistance - 40;
+      const maxX = lane.player.worldDistance + viewport.width + 140;
+      const nextFurballs = [];
+
+      lane.furballs.forEach((ball) => {
+        ball.worldX += speedX * dt;
+        ball.vy += lane.gravityDir * config.furball.gravity * dt;
+        ball.y += ball.vy * dt;
+        if (ball.worldX < minX || ball.worldX > maxX) {
+          return;
+        }
+
+        let hitIndex = -1;
+        for (let i = lane.obstacleCursor; i < lane.obstacles.length; i += 1) {
+          const ob = lane.obstacles[i];
+          if (ob.x > ball.worldX + 60) break;
+          if (ob.x + ob.width < ball.worldX - 20) continue;
+
+          const hitX = ball.worldX >= ob.x && ball.worldX <= ob.x + ob.width;
+          const hitY = ball.y >= ob.y && ball.y <= ob.y + ob.height;
+          if (hitX && hitY) {
+            hitIndex = i;
+            break;
+          }
+        }
+
+        if (hitIndex >= 0) {
+          const hitObstacle = lane.obstacles[hitIndex];
+          lane.furballBursts.push({
+            worldX: hitObstacle.x + hitObstacle.width * 0.5,
+            y: Math.max(hitObstacle.y + 6, hitObstacle.y + hitObstacle.height * 0.4),
+            end: now + 180
+          });
+          lane.obstacles.splice(hitIndex, 1);
+          lane.obstacleCursor = Math.max(0, Math.min(lane.obstacleCursor, lane.obstacles.length - 1));
+          return;
+        }
+
+        nextFurballs.push(ball);
+      });
+
+      lane.furballs = nextFurballs;
+      lane.furballBursts = lane.furballBursts.filter((burst) => burst.end > now);
     }
 
     function playerHitboxRect(lane) {
@@ -826,6 +917,65 @@
       }
     }
 
+    function drawFurballs(lane) {
+      lane.furballs.forEach((ball) => {
+        const x = ball.worldX - lane.player.worldDistance;
+        const y = ball.y;
+        if (x < -20 || x > viewport.width + 20) return;
+
+        ctx.save();
+        ctx.strokeStyle = '#111111';
+        ctx.fillStyle = '#f8f8f8';
+        ctx.lineWidth = 1.8;
+
+        ctx.beginPath();
+        ctx.arc(x, y, ball.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        for (let i = 0; i < 8; i += 1) {
+          const a = (Math.PI * 2 * i) / 8;
+          const r1 = ball.radius - 1;
+          const r2 = ball.radius + 3;
+          ctx.beginPath();
+          ctx.moveTo(x + Math.cos(a) * r1, y + Math.sin(a) * r1);
+          ctx.lineTo(x + Math.cos(a) * r2, y + Math.sin(a) * r2);
+          ctx.stroke();
+        }
+        ctx.fillStyle = '#111111';
+        ctx.beginPath();
+        ctx.arc(x - 1.6, y - 1.2, 1.1, 0, Math.PI * 2);
+        ctx.arc(x + 1.8, y + 0.8, 0.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    function drawFurballBursts(now) {
+      lanes.forEach((lane) => {
+        lane.furballBursts.forEach((burst) => {
+          const t = 1 - Math.max(0, Math.min(1, (burst.end - now) / 180));
+          const x = burst.worldX - lane.player.worldDistance;
+          if (x < -40 || x > viewport.width + 40) return;
+          const y = burst.y;
+          const r = 4 + t * 16;
+
+          ctx.save();
+          ctx.globalAlpha = 1 - t * 0.9;
+          ctx.strokeStyle = '#111111';
+          ctx.lineWidth = 1.4;
+          for (let i = 0; i < 8; i += 1) {
+            const a = (Math.PI * 2 * i) / 8;
+            ctx.beginPath();
+            ctx.moveTo(x + Math.cos(a) * (r * 0.45), y + Math.sin(a) * (r * 0.45));
+            ctx.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+            ctx.stroke();
+          }
+          ctx.restore();
+        });
+      });
+    }
+
     function drawLanePlayer(lane) {
       if (state.mode === 'single' && lane.id === 1) {
         return;
@@ -1008,6 +1158,7 @@
       // Keep lane scrolling even after death so the track still feels alive.
       p.worldDistance += laneSpeed(lane) * dt;
       advanceObstacleCursor(lane);
+      updateFurballs(lane, dt, now);
 
       if (!p.isAlive) return;
 
@@ -1035,6 +1186,8 @@
 
       drawBackground();
       lanes.forEach(drawLaneObstacles);
+      lanes.forEach(drawFurballs);
+      drawFurballBursts(now);
       drawBlinkEffects(now);
       lanes.forEach(drawLanePlayer);
       lanes.forEach(drawLaneName);
@@ -1067,6 +1220,10 @@
         }
         if (lane.keys.swap.includes(key)) {
           triggerLaneSwap(lane, now);
+          return true;
+        }
+        if (lane.keys.furball.includes(key)) {
+          triggerFurball(lane, now);
           return true;
         }
         return false;
@@ -1105,6 +1262,7 @@
       dashCdP2WrapEl.style.display = isSingle ? 'none' : '';
       blinkCdP2WrapEl.style.display = isSingle ? 'none' : '';
       swapCdP2WrapEl.style.display = isSingle ? 'none' : '';
+      furballCdP2WrapEl.style.display = isSingle ? 'none' : '';
     }
 
     function setMode(mode, shouldReset) {

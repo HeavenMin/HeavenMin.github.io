@@ -14,7 +14,7 @@
 <meta property="og:description" content="Play Mode                   Single              Dual                       P1 Score       00000                 P1 Best       00000                 P2 Score       00000                 P2 Best">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-02-24T14:40:45.829Z">
+<meta property="article:modified_time" content="2026-02-25T14:15:18.055Z">
 <meta property="article:author" content="Heaven">
 <meta name="twitter:card" content="summary">
     
@@ -125,8 +125,8 @@
     </div>
     <div class="dino-status" id="dino-status">P1 Running | P2 Running</div>
     <div class="dino-controls">
-      <span id="dino-controls-p1">P1: W Jump / A Dash / S Blink / D Swap</span>
-      <span id="dino-controls-p2">P2: I Jump / J Dash / K Blink / L Swap</span>
+      <span id="dino-controls-p1">P1: W Jump / A Dash / S Blink / D Swap / F Furball</span>
+      <span id="dino-controls-p2">P2: I Jump / J Dash / K Blink / L Swap / ; Furball</span>
       <span id="dino-controls-restart">R: Restart (when both down)</span>
     </div>
   </div>
@@ -151,6 +151,12 @@
       </div>
       <span class="dino-cd-label">P1 Swap</span>
     </div>
+    <div class="dino-cd">
+      <div class="dino-cd-ring" id="dino-furball-cd-p1" data-state="ready">
+        <span class="dino-cd-value">0.00s</span>
+      </div>
+      <span class="dino-cd-label">P1 Furball</span>
+    </div>
     <div class="dino-cd" id="dino-cd-p2-dash-wrap">
       <div class="dino-cd-ring" id="dino-dash-cd-p2" data-state="ready">
         <span class="dino-cd-value">0.00s</span>
@@ -168,6 +174,12 @@
         <span class="dino-cd-value">0.00s</span>
       </div>
       <span class="dino-cd-label">P2 Swap</span>
+    </div>
+    <div class="dino-cd" id="dino-cd-p2-furball-wrap">
+      <div class="dino-cd-ring" id="dino-furball-cd-p2" data-state="ready">
+        <span class="dino-cd-value">0.00s</span>
+      </div>
+      <span class="dino-cd-label">P2 Furball</span>
     </div>
   </div>
 </div>
